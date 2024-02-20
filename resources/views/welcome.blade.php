@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <header class="bg-green-500 text-center h-96">
-        <h1 class="text-yellow-400 stroke-slate-50 text-2xl">
+        <h1 class="text-yellow-400 stroke-slate-50 text-5xl">
             ATLAS MUSIC FESTIVAL
         </h1>
     </header>
