@@ -18,9 +18,33 @@
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="dni" :value="__('DNI')" />
+            <x-text-input id="dni" name="dni" type="text" class="mt-1 block w-full" :value="old('dni', $user->DNI)" required autofocus autocomplete="dni" />
+            <x-input-error class="mt-2" :messages="$errors->get('dni')" />
+        </div>
+
+        <div>
+            <x-input-label for="name" :value="__('Nombre')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
+        </div>
+
+        <div>
+            <x-input-label for="last_name" :value="__('Apellidos')" />
+            <x-text-input id="last_name" name="last_name" type="text" class="mt-1 block w-full" :value="old('last_name', $user->last_name)" required autofocus autocomplete="last_name" />
+            <x-input-error class="mt-2" :messages="$errors->get('last_name')" />
+        </div>
+
+        <div>
+            <x-input-label for="f_nac" :value="__('Fecha de nacimiento')" />
+            <x-text-input id="f_nac" name="f_nac" type="date" class="mt-1 block w-full" :value="old('f_nac', $user->f_nac)" required autofocus autocomplete="f_nac" />
+            <x-input-error class="mt-2" :messages="$errors->get('f_nac')" />
+        </div>
+
+        <div>
+            <x-input-label for="n_telf" :value="__('Número de teléfono')" />
+            <x-text-input id="n_telf" name="n_telf" type="text" class="mt-1 block w-full" :value="old('n_telf', $user->n_telf)" required autofocus autocomplete="n_telf" />
+            <x-input-error class="mt-2" :messages="$errors->get('n_telf')" />
         </div>
 
         <div>

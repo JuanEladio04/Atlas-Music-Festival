@@ -12,7 +12,7 @@ class PassController extends Controller
      */
     public function index()
     {
-        //
+        return view('pass.index');
     }
 
     /**
