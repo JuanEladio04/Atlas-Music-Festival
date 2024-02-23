@@ -35,7 +35,6 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'f_nac' => ['date'],
             'n_telf' => ['unique:users', 'numeric'],
             'type' => ['required']

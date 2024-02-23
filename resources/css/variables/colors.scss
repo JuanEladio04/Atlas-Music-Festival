@@ -3,3 +3,49 @@ $cSecondary : #999999;
 $cAccent : #dae600;
 $cBackground : #fbfbfe;
 $cText : black;
+
+
+.color-cPrimary{
+    color: $cPrimary;
+}
+
+.bg-cPrimary{
+    background-color: $cPrimary;
+}
+
+
+.color-cSecondary{
+    color: $cSecondary;
+}
+
+.bg-cSecondary{
+    background-color: $cSecondary;
+}
+
+
+.color-cAccent{
+    color: $cAccent;
+}
+
+.bg-cAccent{
+    background-color: $cAccent;
+}
+
+
+.color-cBackground{
+    color: $cBackground;
+}
+
+.bg-cBackground{
+    background-color: $cBackground;
+}
+
+
+.color-cText{
+    color: $cText;
+}
+
+.bg-cText{
+    background-color: $cText;
+}
+

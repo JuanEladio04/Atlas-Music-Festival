@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Pass extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id', 
+        'name', 
+        'description',
+        'price',
+        'photo_path',
+    ];
 }
