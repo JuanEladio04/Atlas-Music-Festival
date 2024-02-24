@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Pass;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class CreateTicketForm extends Component
 {
@@ -13,7 +14,7 @@ class CreateTicketForm extends Component
     public $name;
     public $description;
     public $price;
-    public $photo_path;
+    public $photo;
     public $showForm = false;
 
     public function render()
@@ -32,20 +33,30 @@ class CreateTicketForm extends Component
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'photo_path' => 'image|mimes:jpg,jpeg,png|max:2048', 
+            'photo' => 'image|mimes:jpg,jpeg,png|max:2048',
         ];
+
+        if (!$this->photo) {
+            unset($rules['photo']);
+        }
 
         $this->validate($rules);
 
-        $ticketData = [
-            'name' => $this->name,
-            'description' => $this->description,
-            'price' => $this->price,
-            'photo_path' => $this->photo_path ? $this->photo_path->store('photos') : null,
-        ];
+        $newTicket = new Pass();
 
-        Pass::create($ticketData);
-        $this->dispatch('passChangesRealized');
+        $newTicket->name = $this->name;
+        $newTicket->description = $this->description;
+        $newTicket->price = $this->price;
+
+        if ($this->photo) {
+            $photoFileName = time() . "-" . $this->photo->getClientOriginalName();
+            $newTicket->photo_path = 'storage/img/pass/' . $photoFileName;
+
+            $this->photo->storeAs('/public/img/pass/', $photoFileName);
+        }
+
+        $newTicket->save();
         $this->showForm = false;
+        $this->dispatch('passChangesRealized');
     }
 }

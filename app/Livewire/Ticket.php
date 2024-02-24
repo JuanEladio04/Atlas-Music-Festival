@@ -25,7 +25,7 @@ class Ticket extends Component
     }
 
     public function openEditModal(){
-        $this->dispatch('openEditModalPressed');
-    }    
+        $this->dispatch('openEditModalPressed.'. $this->ticket->id);
+    }  
 
 }

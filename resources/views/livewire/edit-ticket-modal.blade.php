@@ -62,17 +62,17 @@
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                for="photo_path">Imagen del pase</label>
-                            <input wire:model="photo_path" type="file" id="photo_path" name="photo_path"
+                                for="photo">Imagen del pase</label>
+                            <input wire:model="photo" type="file" id="photo" name="photo"
                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
-                            @error('photo_path')
+                            @error('photo')
                                 <div class="text-red-500 text-sm">{{ $message }}</div>
                             @enderror
                         </div>
 
 
                     </div>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 mt-4">
                         <button type="submit" wire:click='realizeUpdate'
                             class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                             Actualizar pase

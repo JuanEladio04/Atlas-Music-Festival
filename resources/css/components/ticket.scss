@@ -1,5 +1,12 @@
-.pass{
-    background-color: $cPrimary;
-    border: 1vh double $cAccent;
-
+#bTicketsPage{
+    color: white;
+    #passSectionTitle{
+        color: white;
+        text-shadow: 2px 2px 2px $cAccent; 
+        text-align: center;
+    }
+    .pass{
+        background-color: $cPrimary;
+        border: 1vh double $cAccent;
+    }
 }

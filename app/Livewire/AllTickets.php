@@ -12,14 +12,10 @@ class AllTickets extends Component
 {
     public $tickets;
 
-    public function __construct()
-    {
-        $this->tickets = Pass::all();
-    }
-
     #[On('passChangesRealized')]
     public function render(): View|Closure|string
     {
+        $this->tickets = Pass::all();
         return view('livewire.all-tickets')->with('tickets', $this->tickets);
     }
 }
