@@ -2,22 +2,32 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use App\Models\Publication;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Publication>
- */
 class PublicationFactory extends Factory
 {
     /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Publication::class;
+
+    /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @return array
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            //
+            'title' => $this->faker->sentence,
+            'subtitle' => $this->faker->sentence,
+            'content' => $this->faker->paragraph,
+            'image_path' => $this->faker->imageUrl(),
+            'uid' => User::factory(),
         ];
     }
 }
