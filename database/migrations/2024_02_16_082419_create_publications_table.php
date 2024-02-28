@@ -21,6 +21,14 @@ return new class extends Migration
             $table->foreign('uid')->references('id')->on('users');
             $table->timestamps();
         });
+
+        // Agregar restricción para permitir solo usuarios del tipo 'singer' para crear publicaciones
+        Schema::table('publications', function (Blueprint $table) {
+            $table->foreign('uid')
+                  ->references('id')
+                  ->on('users')
+                  ->where('type', 'singer'); // Restringir el tipo de usuario
+        });
     }
 
     /**
@@ -28,6 +36,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('publications', function (Blueprint $table) {
+            $table->dropForeign(['uid']);
+        });
+
         Schema::dropIfExists('publications');
     }
 };

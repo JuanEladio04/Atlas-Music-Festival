@@ -1,0 +1,31 @@
+.singerCard {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-weight: bold;
+
+    #singerImage {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        z-index: 1;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 80%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), $cSecondary);
+            z-index: 2;
+        }
+    }
+
+    #singerContent {
+        flex-grow: 1;
+        padding: 20px;
+        z-index: 3;
+    }
+}

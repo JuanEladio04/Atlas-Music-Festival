@@ -26,6 +26,7 @@ class User extends Authenticatable
         'f_nac',
         'n_telf',
         'pass',
+        'photo_path',
         'type',
     ];
 

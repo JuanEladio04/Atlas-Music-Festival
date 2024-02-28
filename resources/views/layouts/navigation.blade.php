@@ -15,14 +15,12 @@
                     <x-nav-link :href="route('welcome')" :active="request()->routeIs('dashboard')">
                         {{ 'Inicio' }}
                     </x-nav-link>
-                    @auth
                     <x-nav-link :href="route('pass.index')" :active="request()->routeIs('dashboard')">
                         {{ 'Comprar tickets' }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ 'Cantantes' }}
+                    <x-nav-link :href="route('singer.index')" :active="request()->routeIs('singers')">
+                        {{ 'Cartel' }}
                     </x-nav-link>
-                    @endauth
                 </div>
             </div>
 

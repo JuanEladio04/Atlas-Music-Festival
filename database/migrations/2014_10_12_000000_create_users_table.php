@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('f_nac');
             $table->integer('n_telf');
             $table->enum('type', ['admin', 'user', 'singer']);
+            $table->string('photo_path')->nullable();
             $table->unsignedBigInteger('pass')->nullable()->default('0'); 
             $table->foreign('pass')->references('id')->on('passes');
             $table->rememberToken();
