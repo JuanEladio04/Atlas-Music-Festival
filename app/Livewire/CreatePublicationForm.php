@@ -28,8 +28,8 @@ class CreatePublicationForm extends Component
             $rules = [
                 'pTitle' => 'required|string|max:255',
                 'pSubtitle' => 'string|max:255',
-                'pContent' => 'string',
-                'pImage' => 'image|mimes:jpg,jpeg,png|max:2048',
+                'pContent' => 'required|string',
+                'pImage' => 'image|mimes:jpg,jpeg,png',
             ];
 
             if (!$this->pImage) {
@@ -46,17 +46,16 @@ class CreatePublicationForm extends Component
 
             if ($this->pImage) {
                 $photoFileName = time() . "-" . $this->pImage->getClientOriginalName();
-                $newPublication->photo_path = 'storage/img/publications/' . $photoFileName;
+                $newPublication->image_path = '/storage/img/publications/' . $photoFileName;
 
                 $this->pImage->storeAs('/public/img/publications/', $photoFileName);
             }
 
             $newPublication->save();
-            $this->dispatch('publicationStored');
+            $this->dispatch('publicationCrud');
             session()->flash('status', 'Publicación creada exitosamente');
-            $this->reset();
         } catch (\Throwable $th) {
-            session()->flash('status', 'No ha sido crear la publicación');
+            session()->flash('status', 'No ha sido posible crear la publicación');
         }
     }
 

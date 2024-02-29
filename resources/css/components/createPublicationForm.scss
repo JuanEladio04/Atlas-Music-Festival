@@ -1,0 +1,26 @@
+#createPublicationForm {
+    #newPublicationForm {
+        #pTitle {
+            border-radius: 2vh 2vh 0vh 0vh;
+        }
+
+        #pContent {
+            border-radius: 0vh 0vh 2vh 2vh;
+            &::placeholder {
+                text-indent: 1vh;
+            }
+        }
+
+        .newPublicationInput {
+            border: none;
+            background-color: $cSecondary;
+            &::placeholder {
+                color: $cAccent;
+            }
+        }
+
+        #pImage{
+            border-radius: 1vh;
+        }
+    }
+}

@@ -9,6 +9,7 @@ class Publication extends Component
 {
     public $publication;
     private $singer;
+    public $showModal = false;
 
     public function render()
     {
@@ -17,5 +18,14 @@ class Publication extends Component
             'publication' => $this->publication,
             'singer' => $this->singer
         ]);
+    }
+
+    public function toggleModal(){
+        $this->showModal =!$this->showModal;
+    }
+
+    public function realizeDelete(){
+        $this->publication->delete();
+        $this->dispatch('publicationCrud');
     }
 }

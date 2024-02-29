@@ -19,7 +19,7 @@ class SingerProfileContent extends Component
      *
      * @return \Illuminate\View\View
      */
-    #[On('publicationStored')]
+    #[On('publicationCrud')]
     public function render()
     {
         $this->publications = Publication::where('uid', $this->singer->id)->orderBy('created_at', 'desc')->get();
