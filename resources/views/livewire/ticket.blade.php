@@ -14,11 +14,11 @@
                         {{ $ticket->description }}
                     </p>
                 </div>
-                <div id="passFunctions" class="mt-4 d-flex justify-content-between">
+                <div id="passFunctions" class="mt-4 d-flex justify-content-between mr-auto">
                     <p class="inline-block text-2xl">
                         {{ $ticket->price }}
                     </p>
-                    <div class="inline-block mx-auto">
+                    <div class="inline-block ml-auto">
                         @if ($ticket->id != Auth::user()->pass)
                             <button type="button"
                                 class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
