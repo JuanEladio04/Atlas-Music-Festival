@@ -23,6 +23,7 @@ class SingerProfileContent extends Component
     public function render()
     {
         $this->publications = Publication::where('uid', $this->singer->id)->orderBy('created_at', 'desc')->get();
+        $this->songs = $this->singer->songs()->get();
 
         return view('livewire.singer-profile-content', [
             'singer' => $this->singer,

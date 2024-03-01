@@ -18,6 +18,7 @@ class EditTicketModal extends Component
     public $price;
     public $photo;
     public $showModal = false;
+    public $showDeleteModal = false;
 
     public function render()
     {
@@ -32,6 +33,11 @@ class EditTicketModal extends Component
     public function toggleShowModal()
     {
         $this->showModal = !$this->showModal;
+    }
+
+    public function toggleShowDeleteModal()
+    {
+        $this->showDeleteModal = !$this->showDeleteModal;
     }
 
     public function realizeDelete()

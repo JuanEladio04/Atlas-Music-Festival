@@ -25,8 +25,13 @@
             @break
 
             @case('songs')
-                {{-- <livewire:song :$singer :key="$singer->id"/>
-                Canciones --}}
+                @if (Auth::check() && Auth::user()->id == $singer->id)
+                    <h2>FORMULARIO</h2>
+                @endif
+
+                @foreach ($songs as $song)
+                    <livewire:song :$song :key="$song->id" />
+                @endforeach
             @break
 
         @endswitch
