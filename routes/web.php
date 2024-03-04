@@ -3,6 +3,7 @@
 use App\Http\Controllers\PassController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SingerController;
+use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,4 @@ require __DIR__.'/auth.php';
 
 Route::resource('pass', PassController::class)->middleware('auth');
 Route::resource('singer', SingerController::class);
+Route::resource('song', SongController::class);

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->float('duration');
             $table->string('gender');
-            $table->string('photo_path');
+            $table->string('photo_path')->nullable();
             $table->timestamps();
         });
     }

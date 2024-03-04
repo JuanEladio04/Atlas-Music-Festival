@@ -6,9 +6,20 @@ use Livewire\Component;
 
 class Song extends Component
 {
-    public $songs;
+    public $song;
+    public $showDeleteModal = false;
     public function render()
     {
         return view('livewire.song');
+    }
+    public function toggleDeleteModal(){
+        $this->showDeleteModal = !$this->showDeleteModal;
+    }
+
+    public function realizeDelete(){
+        $this->song->users()->detach();
+        $this->song->delete();
+        $this->showDeleteModal = false;
+        $this->dispatch('singerContentCrud');
     }
 }

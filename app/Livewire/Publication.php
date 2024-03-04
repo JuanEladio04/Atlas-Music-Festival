@@ -26,6 +26,6 @@ class Publication extends Component
 
     public function realizeDelete(){
         $this->publication->delete();
-        $this->dispatch('publicationCrud');
+        $this->dispatch('singerContentCrud');
     }
 }

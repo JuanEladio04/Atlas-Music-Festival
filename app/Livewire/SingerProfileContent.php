@@ -19,11 +19,9 @@ class SingerProfileContent extends Component
      *
      * @return \Illuminate\View\View
      */
-    #[On('publicationCrud')]
     public function render()
     {
-        $this->publications = Publication::where('uid', $this->singer->id)->orderBy('created_at', 'desc')->get();
-        $this->songs = $this->singer->songs()->get();
+        $this->loadData();
 
         return view('livewire.singer-profile-content', [
             'singer' => $this->singer,
@@ -31,6 +29,13 @@ class SingerProfileContent extends Component
             'publications' => $this->publications,
             'songs' => $this->songs
         ]);
+    }   
+
+    
+    #[On('singerContentCrud')]
+    public function loadData(){
+        $this->publications = Publication::where('uid', $this->singer->id)->orderBy('created_at', 'desc')->get();
+        $this->songs = $this->singer->songs()->get();
     }
 
     /**
