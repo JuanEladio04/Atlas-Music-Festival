@@ -52,10 +52,16 @@ class CreatePublicationForm extends Component
             }
 
             $newPublication->save();
+
+            
+            
+   
+
             $this->dispatch('singerContentCrud');
             session()->flash('status', 'Publicación creada exitosamente');
+            $this->reset('pTitle', 'pSubtitle', 'pContent', 'pImage');
         } catch (\Throwable $th) {
-            session()->flash('status', 'No ha sido posible crear la publicación');
+            session()->flash('status', 'No ha sido posible crear la publicación:' . $th);
         }
     }
 

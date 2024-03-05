@@ -19,6 +19,7 @@ class Song extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_song', 'sid', 'uis');
+        return $this->belongsToMany(User::class, 'user_song', 'sid', 'uid');
     }
+
 }

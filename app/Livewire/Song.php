@@ -22,4 +22,8 @@ class Song extends Component
         $this->showDeleteModal = false;
         $this->dispatch('singerContentCrud');
     }
+
+    public function showColaboratorsModal(){
+        $this->dispatch('showColaboratorsModalPressed');
+    }
 }

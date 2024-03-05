@@ -4,6 +4,7 @@
     align-items: center;
     overflow: hidden;
     font-weight: bold;
+    max-height: 24.7vh;
 
     #singerImage {
         flex-shrink: 0;
@@ -11,6 +12,7 @@
         max-width: 100%;
         position: relative;
         z-index: 1;
+        max-height: 24.7vh;
         &:after {
             content: "";
             position: absolute;

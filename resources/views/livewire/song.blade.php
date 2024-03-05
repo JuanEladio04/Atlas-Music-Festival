@@ -16,7 +16,7 @@
         </div>
 
         @if (Auth::check() &&
-                Auth::user()->songs()->where('songs.id', $song->id)->exists())
+                Auth::user()->songs()->where('songs.id', $song->id)->exists() || Auth::user()->type == 'admin')
             <div class="flex justify-end">
 
                 <a href="{{ route('song.edit', ['song' => $song]) }}">
@@ -31,7 +31,7 @@
                     Eliminar canción
                 </button>
 
-                <button type="button" wire:click='toggleDeleteModal'
+                <button type="button" wire:click='showColaboratorsModal'
                     class="my-8 h-10 text-center justify-center focus:outline-none text-white bg-yellow-300 hover:bg-yellow-200 focus:ring-4 focus:ring-yellow-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
                     <span class="material-symbols-outlined">
                         person_add
@@ -82,7 +82,7 @@
                         </button>
                         <button type="button"
                             class="mt-3 w-full inline-flex justify-center rounded-md border border-yellow-300 shadow-sm px-4 py-2 bg-cSecondary text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-200 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                            wire:click='toggleShowDeleteModal'>
+                            wire:click='toggleDeleteModal'>
                             Cancelar
                         </button>
                     </div>
@@ -90,4 +90,6 @@
             </div>
         </div>
     @endif
+
+    <livewire:AddColaboratorModal :$song :key="$song->id" />
 </div>

@@ -5,7 +5,7 @@
         @error('pTitle')
             <div class="text-red-500 text-sm">{{ $message }}</div>
         @enderror
-
+{{$pTitle}}
         <input class="block newPublicationInput" wire:model='pSubtitle' type="text" name="pSubtitle" id="pSubtitle"
             placeholder="Introduce el subtítulo de la publicación">
         @error('pSubtitle')
@@ -36,5 +36,5 @@
             <span class="font-medium"></span> {{ session('status') }}
         </div>
     @endif
-
+        
 </div>
