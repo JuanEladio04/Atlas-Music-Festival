@@ -22,6 +22,7 @@ class Ticket extends Component
         Auth::user()->pass = $this->ticket->id;
         Auth::user()->save();
         $this->dispatch('uptadeRealized');
+        return redirect()->route('passPDF.generatePDF');
     }
 
     public function openEditModal(){

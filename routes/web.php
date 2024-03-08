@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PassController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SingerController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SingerController;
+use App\Http\Controllers\PdfPassController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/passPDF', [PdfPassController::class, 'generatePDF'])->name('passPDF.generatePDF');
 });
 
 require __DIR__.'/auth.php';
@@ -37,4 +39,5 @@ require __DIR__.'/auth.php';
 Route::resource('pass', PassController::class)->middleware('auth');
 Route::resource('singer', SingerController::class);
 Route::resource('song', SongController::class)->middleware(['auth', 'singer']);
+Route::resource('user', UserController::class)->middleware(['auth', 'admin']);
 Route::resource('user', UserController::class)->middleware(['auth', 'admin']);

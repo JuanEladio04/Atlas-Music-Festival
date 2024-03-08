@@ -4,18 +4,17 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Publication;
-use Livewire\Attributes\On;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class CreatePublicationForm extends Component
 {
     use WithFileUploads;
 
-    public $pTitle;
-    public $pSubtitle;
-    public $pContent;
-    public $pImage;
+    public $pTitle = '';
+    public $pSubtitle = '';
+    public $pContent = '';
+    public $pImage = '';
 
     public function render()
     {
@@ -53,13 +52,10 @@ class CreatePublicationForm extends Component
 
             $newPublication->save();
 
-            
-            
-   
-
             $this->dispatch('singerContentCrud');
             session()->flash('status', 'Publicación creada exitosamente');
-            $this->reset('pTitle', 'pSubtitle', 'pContent', 'pImage');
+
+            $this->reset();
         } catch (\Throwable $th) {
             session()->flash('status', 'No ha sido posible crear la publicación:' . $th);
         }
