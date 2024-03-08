@@ -21,7 +21,7 @@ class AddColaboratorModal extends Component
         return view('livewire.add-colaborator-modal');
     }
 
-    #[On('showColaboratorsModalPressed')]
+    #[On('showColaboratorsModalPressed{song.id}')]
     public function toggleModal()
     {
         $this->showModal = !$this->showModal;

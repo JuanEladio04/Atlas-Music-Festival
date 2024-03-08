@@ -27,6 +27,6 @@ class Song extends Component
 
     public function showColaboratorsModal()
     {
-        $this->dispatch('showColaboratorsModalPressed');
+        $this->dispatch('showColaboratorsModalPressed' . $this->song->id);
     }
 }
