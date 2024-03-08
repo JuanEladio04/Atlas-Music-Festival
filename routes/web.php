@@ -36,5 +36,5 @@ require __DIR__.'/auth.php';
 
 Route::resource('pass', PassController::class)->middleware('auth');
 Route::resource('singer', SingerController::class);
-Route::resource('song', SongController::class);
-Route::resource('user', UserController::class)->middleware('auth');
+Route::resource('song', SongController::class)->middleware(['auth', 'singer']);
+Route::resource('user', UserController::class)->middleware(['auth', 'admin']);
