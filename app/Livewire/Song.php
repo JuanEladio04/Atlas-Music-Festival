@@ -12,18 +12,21 @@ class Song extends Component
     {
         return view('livewire.song');
     }
-    public function toggleDeleteModal(){
+    public function toggleDeleteModal()
+    {
         $this->showDeleteModal = !$this->showDeleteModal;
     }
 
-    public function realizeDelete(){
+    public function realizeDelete()
+    {
         $this->song->users()->detach();
         $this->song->delete();
         $this->showDeleteModal = false;
         $this->dispatch('singerContentCrud');
     }
 
-    public function showColaboratorsModal(){
+    public function showColaboratorsModal()
+    {
         $this->dispatch('showColaboratorsModalPressed');
     }
 }

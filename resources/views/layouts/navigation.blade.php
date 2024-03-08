@@ -60,6 +60,12 @@
                                 </x-dropdown-link>
                             @endif
 
+                            @if (Auth::user()->type == 'admin')
+                                <x-dropdown-link :href="route('user.index')">
+                                    {{ 'Gestionar usuarios' }}
+                                </x-dropdown-link>
+                            @endif
+
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

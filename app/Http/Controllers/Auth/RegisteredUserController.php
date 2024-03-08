@@ -37,7 +37,6 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'f_nac' => ['date'],
             'n_telf' => ['unique:users', 'numeric'],
-            'type' => ['required']
         ]);
         
         $user = User::create([
@@ -49,8 +48,6 @@ class RegisteredUserController extends Controller
             'f_nac' => $request->f_nac,
             'n_telf'=> $request->n_telf,
             'pass' => $request->pass,
-            'type' => $request->type,
-
         ]);
 
         event(new Registered($user));

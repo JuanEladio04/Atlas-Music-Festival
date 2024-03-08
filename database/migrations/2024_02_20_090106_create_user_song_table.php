@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('user_song', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('uid'); 
-            $table->foreign('uid')->references('id')->on('users');
+            $table->foreign('uid')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('sid'); 
-            $table->foreign('sid')->references('id')->on('songs');
+            $table->foreign('sid')->references('id')->on('songs')->onDelete('cascade');
             $table->timestamps();
         });
     }

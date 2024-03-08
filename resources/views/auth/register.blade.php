@@ -70,17 +70,6 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <!-- Type -->
-        <div class="mt-4">
-            <x-input-label for="type" :value="__('¿Que tipo de usuario eres?')" />
-            <select id="type" name="type" class="block mt-1 w-full" required
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option value="" disabled selected>¿Que eres?</option>
-                <option value="user" {{ old('type') == 'user' ? 'selected' : '' }}>Cliente</option>
-                <option value="singer" {{ old('type') == 'singer' ? 'selected' : '' }}>Cantante</option>
-            </select>
-        </div>
-
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                 href="{{ route('login') }}">
