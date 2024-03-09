@@ -6,7 +6,7 @@
                 <img class="rounded-full h-72 w-72" src="{{ $singer->photo_path }}" alt="">
             </div>
             <div class="singerName col-span-2 flex items-center">
-                <h1 class="text-5xl text-white">
+                <h1 class="text-5xl cTitle">
                     {{ $singer->name }}
                 </h1>
             </div>

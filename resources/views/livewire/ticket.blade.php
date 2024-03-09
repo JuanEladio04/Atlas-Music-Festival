@@ -14,7 +14,7 @@
                         {{ $ticket->description }}
                     </p>
                 </div>
-                <div id="passFunctions" class="mt-4 d-flex justify-content-between mr-auto">
+                <div id="passFunctions" class="flex mt-92 justify-content-between ml-auto">
                     <p class="inline-block text-2xl">
                         {{ $ticket->price }}
                     </p>

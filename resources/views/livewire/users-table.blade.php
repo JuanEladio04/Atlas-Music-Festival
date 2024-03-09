@@ -1,7 +1,7 @@
 <div>
     <div class="m-10 gap-4">
         <label for="usersBrowser" class="text-white">Buscar: </label>
-        <input type="text" id="usersBrowser" wire:model.live='search'>
+        <input type="text" id="usersBrowser" wire:model.live='search' class="rounded-lg">
     </div>
 
     @if (session('status'))
@@ -11,8 +11,8 @@
     @endif
 
     <div class="relative overflow-x-auto">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <table class="w-full text-sm text-left rtl:text-right text-white">
+            <thead class="text-xs color-cAccent uppercase">
                 <tr class="text-center">
                     <th scope="col" class="px-6 py-3" wire:click='orderBy("id")'>
                         id
@@ -55,7 +55,7 @@
             <tbody>
 
                 @foreach ($users as $user)
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-cPrimary border-b dark:border-gray-700">
                         <td class="px-6 py-4">
                             {{ $user->id }}
                         </td>

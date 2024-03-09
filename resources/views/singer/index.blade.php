@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <h1 class="text-white text-center text-4xl my-10">
+    <h1 class="text-white text-center text-4xl my-10 cTitle">
         Nuestros cantantes
     </h1>
 

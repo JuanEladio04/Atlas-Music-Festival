@@ -9,3 +9,9 @@ p, input, textarea, div{
 label {
     font-family: "Roboto Slab", serif !important;
 }
+
+.cTitle{
+    font-family: 'Porter Sans Block', sans-serif !important;
+    color: white !important;
+    text-shadow: 2px 2px 2px $cAccent; 
+}
