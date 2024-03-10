@@ -45,7 +45,8 @@
                                     <div class="mt-2 text-white grid grid-cols-4">
                                         <input type="text" name="ittColaboratorMail" id="addInput"
                                             wire:model.live='singerEmail'
-                                            placeholder="Correo electronico del colaborador" class="w-full col-span-3">
+                                            placeholder="Correo electronico del colaborador" class="w-full col-span-3"
+                                            class="text-black">
                                         <button type="button" id="addButton"
                                             class="inline-flex col-span-1 justify-center text-white rounded-md border border-yellow-300 shadow-sm px-4 py-2 bg-yellow-300 text-base font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-200"
                                             wire:click='addColaborator'>

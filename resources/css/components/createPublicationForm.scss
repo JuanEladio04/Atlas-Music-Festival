@@ -14,6 +14,7 @@
         .newPublicationInput {
             border: none;
             background-color: $cBackground;
+            color: white !important;
             &::placeholder {
                 color: $cAccent;
             }

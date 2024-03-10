@@ -68,7 +68,7 @@ class UserController extends Controller
                 'f_nac' => ['nullable', 'date'],
                 'n_telf' => ['nullable', 'numeric', Rule::unique(User::class)->ignore($id)],
                 'type' => ['required', 'string', Rule::in(['admin', 'user', 'singer'])],
-                'pass' => ['required', 'string'],
+                'pass' => ['nullable', 'string'],
                 'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
             ]);
 

@@ -68,7 +68,7 @@
         <div class="mt-7">
             <x-input-label for="pass" :value="__('Pase')" />
             <x-text-input id="pass" class="block mt-1 w-full" type="number" name="pass" :value="old('pass', $user->pass)"
-                required autofocus autocomplete="pass" />
+                autofocus autocomplete="pass" />
             <x-input-error :messages="$errors->get('pass')" class="mt-2" />
 
         </div>
@@ -77,7 +77,7 @@
         <div class="mt-7">
             <x-input-label for="type" :value="__('Tipo')" />
             <select id="type" name="type"
-                class="block mt-1 w-full rounded-md shadow-sm focus:ring-opacity-50 p-2 ">
+                class="block mt-1 w-full rounded-md shadow-sm focus:ring-opacity-50 p-2 bg-cBackground text-white">
                 <option value="admin" {{ old('type', $user->type) == 'admin' ? 'selected' : '' }}>Admin</option>
                 <option value="user" {{ old('type', $user->type) == 'user' ? 'selected' : '' }}>Usuario</option>
                 <option value="singer" {{ old('type', $user->type) == 'singer' ? 'selected' : '' }}>Cantante</option>
