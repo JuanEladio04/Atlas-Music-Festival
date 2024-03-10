@@ -58,5 +58,6 @@ class CreateTicketForm extends Component
         $newTicket->save();
         $this->showForm = false;
         $this->dispatch('passChangesRealized');
+        $this->reset();
     }
 }
