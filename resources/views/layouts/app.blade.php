@@ -53,6 +53,7 @@
                 <a class="flex title-font font-medium items-center md:justify-start justify-center text-white mx-auto">
                     <img src="/storage/img/logo/logo.png" alt="Logo del festival" class="w-52">
                 </a>
+                {{-- <x-application-logo class="block h-9 w-auto fill-current text-white" /> --}}
             </div>
         </footer>
     </div>
