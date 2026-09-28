@@ -18,15 +18,15 @@
             <div class="grid grid-cols-3 place-items-center">
                 <x-news-card title="Nuevos artistas"
                     content="Descubre a los talentosos artistas emergentes que se unen a nosotros este año en Atlas. ¡No te los pierdas!"
-                    img_path="/storage/img/dummy/dummy_image.png" />
+                    img_path="/img/dummy/dummy_image.png" />
 
                 <x-news-card title="Nuevas canciones"
                     content="Disfruta de las emocionantes nuevas canciones que se estrenarán en Atlas. ¡Prepárate para moverte al ritmo!"
-                    img_path="/storage/img/dummy/dummy_image.png" />
+                    img_path="img/dummy/dummy_image.png" />
 
                 <x-news-card title="Actividades recreativas"
                     content="Participa en las divertidas actividades recreativas que hemos preparado para ti en Atlas. ¡Diversión garantizada!"
-                    img_path="/storage/img/dummy/dummy_image.png" />
+                    img_path="/img/dummy/dummy_image.png" />
 
             </div>
 

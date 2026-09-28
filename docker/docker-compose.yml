@@ -1,45 +1,41 @@
-version: '3'
-services:
-  atlas-laravel-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: Atlas-Music-Festival
-    restart: always
-    stdin_open: true
-    tty: true
-    volumes:
-      - ../:/app
-    ports:
-      - "8000:8000"
-      - "5173:5173"
-      - "5174:5174"
-    networks:
-      - atlas
-    depends_on:
-      - atlas-db
-    entrypoint: ["/app/docker/entrypoint.sh"]
-    command: 
-      bash -c
-        "npm install &&
-        composer install &&
-        npm run build &&
-        php artisan serve --host=0.0.0.0 --port=8000"
+name: atlas-music-festival
 
-  atlas-db:
-    image: mysql:8.0
-    container_name: atlas_db
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: atlas
-      MYSQL_USER: atlas
-      MYSQL_PASSWORD: atlas
-      MYSQL_DATABASE: atlas
-    ports:
-      - "3306:3306"
-    networks:
-      - atlas
+services:
+    atlas-music-festival-laravel:
+        build:
+            context: '.'
+            dockerfile: Dockerfile
+            # args:
+            #     WWWGROUP: '${WWWGROUP}'
+        container_name: atlas-music-festival-laravel
+        ports:
+            - 80:8000
+            - 5173:5173
+        volumes:
+            - '..:/app'
+            - 'vendor_cache:/app/vendor'
+            - 'node_modules_cache:/app/node_modules'
+        command: sh -c "npm install && composer install && composer run dev"
+        networks:
+            - atlas-music-festival-network
+
+    db:
+        image: mysql:8.0
+        container_name: atlas-music-festival-db
+        environment:
+            MYSQL_ROOT_PASSWORD: Password1234*
+            MYSQL_USER: atlas_user
+            MYSQL_PASSWORD: 1234
+            MYSQL_DATABASE: atlas-music-festival_db
+        ports:
+        - "3306:3306"
+        networks:
+            - atlas-music-festival-network
 
 networks:
-  atlas:
-    driver: bridge
+    atlas-music-festival-network:
+        driver: bridge
+
+volumes:
+    vendor_cache:
+    node_modules_cache:

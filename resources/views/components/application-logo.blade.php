@@ -1,1 +1,1 @@
-<img src="/storage/img/logo/logo.png" alt="Logo del festival">
+<img src="/public/img/logo/logo.png" alt="Logo del festival">
