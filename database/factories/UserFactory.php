@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'password' => bcrypt('password'), // password
             'f_nac' => $this->faker->date(),
             'n_telf' => $this->faker->randomNumber(9),
-            'photo_path' => $this->faker->imageUrl(),
+            'photo_path' => 'https://i.pravatar.cc/300?u=' . $this->faker->unique()->safeEmail,
             'type' => $this->faker->randomElement(['admin', 'user', 'singer']),
             'pass' => Pass::factory(),
             'remember_token' => Str::random(10),

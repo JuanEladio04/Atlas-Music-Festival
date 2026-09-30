@@ -16,6 +16,8 @@ services:
             - 'vendor_cache:/app/vendor'
             - 'node_modules_cache:/app/node_modules'
         command: sh -c "npm install && composer install && composer run dev"
+        depends_on:
+            - db
         networks:
             - atlas-music-festival-network
 
