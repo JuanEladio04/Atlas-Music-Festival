@@ -26,7 +26,7 @@ class PublicationFactory extends Factory
             'title' => $this->faker->sentence,
             'subtitle' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
-            'image_path' => $this->faker->imageUrl(),
+            'image_path' => 'https://picsum.photos/seed/' . $this->faker->uuid() . '/800/450',
             'uid' => User::factory(),
         ];
     }

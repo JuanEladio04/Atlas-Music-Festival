@@ -25,7 +25,7 @@ class SongFactory extends Factory
             'name' => $this->faker->sentence,
             'duration' => $this->faker->randomFloat(2, 0, 10),
             'gender' => $this->faker->word,
-            'photo_path' => $this->faker->imageUrl(),
+            'photo_path' => 'https://picsum.photos/seed/' . $this->faker->uuid() . '/400/400',
         ];
     }
 }
